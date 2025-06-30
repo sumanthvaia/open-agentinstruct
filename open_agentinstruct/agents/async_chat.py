@@ -5,7 +5,7 @@ import os
 
 
 async def async_chat_completion(
-    system_prompt, user_prompt, model="gpt-4o-mini", max_retries=3
+    system_prompt, user_prompt, model="ollama/qwen3:8b", max_retries=3
 ):
     semaphore = asyncio.Semaphore(10)
     async with semaphore:
