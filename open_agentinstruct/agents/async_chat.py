@@ -18,7 +18,7 @@ async def async_chat_completion(
             try:
                 messages = [
                     {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
+                    {"role": "user", "content": user_prompt + "/no_think"},
                 ]
 
                 completion_kwargs = {
@@ -31,6 +31,7 @@ async def async_chat_completion(
 
                 response = await acompletion(**completion_kwargs)
                 content = response["choices"][0]["message"]["content"]
+                print(content)
                 return content.strip()
             except Exception as e:
                 base_wait = 2**attempt
