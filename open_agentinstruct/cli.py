@@ -48,7 +48,7 @@ def setup_parser():
     parser.add_argument(
         "--model",
         type=str,
-        default=os.getenv("OAI_MODEL", "gpt-4o-mini"),  # Changed default, use env var
+        default=os.getenv("OAI_MODEL", "ollama/qwen3:8b"),  # Changed default, use env var
         help="The model identifier to use for LLM completions (e.g., 'openai/gpt-4o-mini', 'gemini/gemini-1.5-flash-latest'). Loaded from OAI_MODEL env var if set.",
     )
     parser.add_argument(
